@@ -1,0 +1,312 @@
+/* Feuille de styles CSS*/
+/* Box-sizing */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Police */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto Bold 700', sans-serif;
+  font-size: 25px;
+}
+
+h2 {
+  font-family: 'Roboto Bold 700', sans-serif;
+  font-size: 20px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Variable */
+/* Shop pics */
+#img__palette__du__gout {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+#img__note__enchantee {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+#img__a__la__francaise {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+#img__delice__des__sens {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+/* Header */
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px 0px;
+}
+
+.heading img {
+  width: 50%;
+}
+
+.localisation {
+  border-top: #D5D5D5 solid 3px;
+  background-color: #EAEAEA;
+}
+
+.localisation a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 45px;
+  font-size: 17px;
+  gap: 20px;
+}
+
+.localisation p {
+  font-family: 'raleway', sans-serif;
+}
+
+/* Explore */
+.explore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 30px 30px 70px;
+  gap: 30px;
+}
+
+.explore__button a {
+  margin-top: 25px;
+  background-color: #FF79DA;
+  border: #FF79DA solid;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Working */
+.working {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+}
+
+.workcard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+  position: relative;
+}
+
+.workcard .workcard__main:hover {
+  background-color: #F5EDFF;
+  border: #F5EDFF solid 10px;
+}
+
+.workcard .workcard__main:hover .workcard__main__ico {
+  color: #9356DC;
+}
+
+.workcard__number {
+  font-size: 12px;
+  color: white;
+  background-color: #9356DC;
+  border-radius: 50%;
+  padding: 3px 8px;
+  z-index: 1;
+}
+
+.workcard__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: #F6F6F6 solid 10px;
+  border-radius: 25px;
+  background-color: #F6F6F6;
+  padding: 25px;
+  margin-left: -35px;
+}
+
+.workcard__main__ico {
+  position: absolute;
+  left: 40px;
+  color: gray;
+}
+
+.workcard__main__text {
+  position: absolute;
+  font-size: 15px;
+  font-weight: bold;
+  left: 75px;
+}
+
+.workcard__main--purple {
+  background-color: #F5EDFF;
+  border: #F5EDFF solid 10px;
+}
+
+.workcard__main--purple .workcard__main__ico {
+  color: #9356DC;
+}
+
+/* Shop */
+.shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #F6F6F6;
+  padding: 20px;
+}
+
+.shop h2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 25px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.card__img {
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+  height: 170px;
+}
+
+.card__new {
+  position: absolute;
+  background-color: #99E2D0;
+  right: 17px;
+  top: 12px;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 7px 13px;
+  color: #1b6150;
+}
+
+.card__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__bottom__title {
+  padding: 10px;
+}
+
+.card__bottom__title h3, .card__bottom__title p {
+  margin: 6px;
+}
+
+.card__bottom__heart i {
+  font-weight: 100;
+  font-size: 30px;
+  padding: 20px;
+}
+
+/* Footer */
+.foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #353535;
+  color: white;
+  padding: 25px;
+}
+
+.foot__title {
+  font-family: 'Shrikhand',sans-serif;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.foot__link {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  font-size: 17px;
+}
+
+.foot__link i {
+  margin-right: 15px;
+  font-size: 15px;
+  width: 15px;
+}
+/*# sourceMappingURL=style.css.map */
