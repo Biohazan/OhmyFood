@@ -1,0 +1,25 @@
+// Buttons //
+
+.buttons {
+    align-self: center;
+    & a{
+    margin-top: 25px;
+    background-color: #FF79DA;
+    border: #FF79DA solid;
+    border-radius: 25px;
+    padding: 13px 25px;
+    color: white;
+    font-weight: bold;
+    @include shadow-btn;
+    }
+}
+.btn__commands {
+    background-color: $main-background;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 80px;
+    & a{
+    padding: 12px 45px;
+    }
+}

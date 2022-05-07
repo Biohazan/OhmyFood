@@ -1,0 +1,44 @@
+// Fonts //
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: 'Roboto Bold 700', sans-serif;
+    font-size: 25px;
+}
+h2 {
+    font-family: 'Roboto Bold 700', sans-serif;
+    font-size: 22px;
+    margin: 0px;
+}
+.localisation {
+    & a{
+        & i{font-size: 16px;}
+    }
+    &__city input {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
+.menu {
+    &__restaurant p {
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 27px;
+    margin: 0px;
+    }
+    &__title {
+    font-size: 15px;
+    margin: 0px;
+    }
+}
+.cards {
+    &__new {font-size: 13px;}
+    &__bottom {
+        &__price {font-size: 14px;}
+    }
+}
+.card {
+    &__new {font-size: 12px;}
+}

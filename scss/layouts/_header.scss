@@ -1,0 +1,23 @@
+// Header //
+
+.heading {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    position: relative;
+        & img {
+            height: 50px;
+        }
+        & a {
+            position: absolute;
+            left: 18px;
+            align-self: center;
+            font-size: 18px;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    .heading img {
+        height: 30px;
+    }
+}

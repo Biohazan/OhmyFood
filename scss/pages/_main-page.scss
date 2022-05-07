@@ -1,0 +1,140 @@
+// Main page //
+
+/* Localisation */
+
+.localisation{
+    border-top: #D5D5D5 solid 3px;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: center;
+        & a{
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 5px;
+        gap: 10px;
+        margin-left: 55px;
+        }
+        &__city input {
+            background-color:  transparent;
+            border: $main-background;
+            outline: none;
+            border-radius: 15px;
+            color: black;
+            padding: 7px;
+            &:focus { background-color: darken($main-background, 15%);
+            }
+            &::placeholder {
+                color: black;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+            }
+        }
+}
+
+/* Explore */
+
+.explore {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: $main-background;
+    padding: 30px 30px 70px;
+    gap: 30px;
+    }
+
+/* Working */
+
+@mixin workcard-hover {
+    .workcard__main:hover {
+        background-color: #F5EDFF;
+        border: #F5EDFF solid 10px;
+        .workcard__main__ico {color: $primary;}  
+    }                 
+}
+.working {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+}
+.workcard {
+    @include workcard-hover();
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+        &__number {
+            font-size: 12px;
+            color: white;
+            background-color: #9356DC;
+            border-radius: 50%;
+            padding: 3px 8px;
+            z-index: 1;
+        }
+
+        &__main {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            border: $main-background solid 10px;
+            border-radius: 25px;
+            background-color: $main-background;
+            padding: 25px;
+            margin-left: -35px;
+                &__ico {
+                    position: absolute;
+                    left: 40px;
+                    color: gray;
+                }
+                &__text {
+                    position: absolute;
+                    font-size: 15px;
+                    font-weight: bold;
+                    left: 75px;
+                }
+                &--purple {
+                    background-color: #F5EDFF;
+                    border: #F5EDFF solid 10px;
+                    .workcard__main__ico {color: $primary;}                    
+                }
+        }
+}
+
+/* Shop */
+
+.shops {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $main-background;
+    gap: 25px;
+    padding: 60px 20px;
+        & h2 {align-self: flex-start;}
+        &__grid {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            width: 100%;
+        }
+}
+
+//! A revoir avec brice !//
+// @function position-bg {
+//     @if (index: active) {
+//         #img__a__la__francaise{ background-position-y: 60%};
+//     }
+//     @else {
+//         ##img__a__la__francaise {background-position-y: 50%}
+//     }
+// }
+
+
+@media screen and (max-width:768px) {
+    .shops__grid {
+        flex-direction: column;
+    }
+}
+
+
+

@@ -1,0 +1,25 @@
+/* Footer */
+
+.foot {
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    color: white;
+    padding: 25px;
+    &__title{
+        font-family: 'Shrikhand',sans-serif;
+        margin-top: 0px;
+        font-size: 20px;
+    }
+     &__link {
+         color: white;
+         display: flex;
+         padding: 5px;
+         font-size: 15px;
+          & i {
+              margin-right: 15px;
+              font-size: 15px;
+              width: 15px;
+          }
+     }
+}

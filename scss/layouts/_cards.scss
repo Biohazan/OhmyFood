@@ -1,0 +1,47 @@
+// Cards //
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 15px;
+    @include shadow;
+    transform: scale(1);
+    transition: 0.2s;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &__img {
+        background-position: bottom;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        height: 170px;
+    }
+    &__new {
+        position: absolute;
+        background-color: $third;
+        right: 17px;
+        top: 12px;
+        border-radius: 2px;
+        padding: 7px 15px;
+        color: darken($third, 50%);
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            &__title {
+                padding: 10px;
+                    & h3, & p {margin: 5px;}
+            }
+        &__price {
+            align-self: flex-end;
+            font-weight: bold;
+            padding: 15px;            
+        }
+    }
+}
