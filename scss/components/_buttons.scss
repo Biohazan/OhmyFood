@@ -1,25 +1,44 @@
 // Buttons //
 
 .buttons {
+    display: flex;
     align-self: center;
     & a{
-    margin-top: 25px;
-    background-color: #FF79DA;
-    border: #FF79DA solid;
+    background: linear-gradient(175deg, $second, $primary);
     border-radius: 25px;
-    padding: 13px 25px;
+    padding: 16px 25px;
     color: white;
     font-weight: bold;
     @include shadow-btn;
+    position: relative;
+    z-index: 1;
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "";
+            border-radius: 25px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0;
+            background: linear-gradient(175deg, $primary, $second, $primary);
+            transition: opacity 0.8s ease-in-out;
+        }
     }
 }
-.btn__commands {
+.commands {
     background-color: $main-background;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 35px;
     padding-bottom: 80px;
     & a{
-    padding: 12px 45px;
+    padding: 17px 55px;
     }
 }

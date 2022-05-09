@@ -1,7 +1,43 @@
-/* heart */
+// heart //
 
-.heart i{
-    font-weight: 100;
-    font-size: 25px;
-    padding: 0px 20px;
+.heart {
+    position: relative;
+    & span {
+        cursor: pointer; 
+        padding: 0px 10px;
+    }
+}
+.heart-white {
+    & i {font-weight: 100;
+        transition: color 1s ease-in-out;} 
+}
+.heart-color {
+    position: absolute;
+    right: 0px;
+    // & .fa-heart { 
+    //     background-clip: text;
+    //     color: transparent;
+    //     background: linear-gradient(            
+    //         $primary,
+    //         $second,
+    //         );
+    // }
+    & i {   
+        color: $primary;
+        transform: scale(0);
+        transition:  transform 0.8s ease-in-out;
+    }
+}
+.check-heart {
+    display: none;
+}
+.check-heart:hover + .heart-white i, .check-heart:checked + .heart-white i {
+    color: transparent;
+}
+.check-heart:hover ~ .heart-color i{
+    transform: scale(1);
+}
+.check-heart:checked ~ .heart-color i {
+    transform: scale(1) rotate(1turn);
+    transition:  transform 0.5s ease-in-out;
 }

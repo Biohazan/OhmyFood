@@ -9,11 +9,6 @@
     background-color: white;
     border-radius: 15px;
     @include shadow;
-    transform: scale(1);
-    transition: 0.2s;
-    &:hover {
-        transform: scale(1.05);
-    }
     &__img {
         background-position: bottom;
         background-size: cover;
@@ -34,14 +29,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 8px;
             &__title {
-                padding: 10px;
                     & h3, & p {margin: 5px;}
             }
         &__price {
             align-self: flex-end;
             font-weight: bold;
-            padding: 15px;            
+            padding: 0px 10px;            
         }
+        // &:hover + .menu__check__on__ico::after{
+        //     transform: scale(1);
+
+        // }
+
+    }
+}
+.menu__check {
+
+    &__on {
+
+    &__ico i{
+    font-size: 55px;
+    
+    }
     }
 }
