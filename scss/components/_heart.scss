@@ -14,16 +14,11 @@
 .heart-color {
     position: absolute;
     right: 0px;
-    // & .fa-heart { 
-    //     background-clip: text;
-    //     color: transparent;
-    //     background: linear-gradient(            
-    //         $primary,
-    //         $second,
-    //         );
-    // }
-    & i {   
-        color: $primary;
+    & .fa-solid { 
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient($primary, $second);  
         transform: scale(0);
         transition:  transform 0.8s ease-in-out;
     }
@@ -36,6 +31,7 @@
 }
 .check-heart:hover ~ .heart-color i{
     transform: scale(1);
+    z-index: 1;
 }
 .check-heart:checked ~ .heart-color i {
     transform: scale(1) rotate(1turn);

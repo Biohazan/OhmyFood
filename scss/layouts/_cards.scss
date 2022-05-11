@@ -3,7 +3,6 @@
 .card {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 100%;
     overflow: hidden;
     background-color: white;
@@ -26,32 +25,67 @@
         color: darken($third, 50%);
     }
     &__bottom {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 8px;
-            &__title {
-                    & h3, & p {margin: 5px;}
-            }
+        padding: 0px 20px;
+        &__title {
+            overflow: hidden;
+            padding: 10px 0px;
+            transition: margin-right $anim-time ease-in-out;
+                & h3, & p { margin: 0px; 
+                            line-height: 25px; 
+                            overflow: hidden; 
+                            white-space: nowrap;
+                            text-overflow: ellipsis;}
+        }
         &__price {
             align-self: flex-end;
-            font-weight: bold;
-            padding: 0px 10px;            
+            transition: all $anim-time ease-in-out;
+            display: block;
+            & p {
+                padding: 10px 0px;
+                margin: 0px;
+                line-height: 25px;
+                font-weight: bold;
+            }  
         }
-        // &:hover + .menu__check__on__ico::after{
-        //     transform: scale(1);
-
-        // }
-
+        &:hover {
+            .card__bottom__title {margin-right: 75px;}
+            .card__bottom__price {
+                transform: translateX(-65px);
+            }
+            .menu__check {
+                transform: translatex(-0px);
+                & i{
+                animation: icon_rotate $anim-time 0.1s ease-in-out;
+                }
+            } 
+        }
     }
-}
+}   
+@keyframes icon_rotate {
+    to {transform: rotate(1turn)};
+}      
 .menu__check {
-
-    &__on {
-
-    &__ico i{
-    font-size: 55px;
-    
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $third;
+    width: 70px;
+    height: 100%;
+    cursor: pointer;
+    transform: translatex(100px);
+    transition: all $anim-time ease-in-out;
+    &__input {display: none;}
+    & i {
+        font-size: 22px;
+        color: white;
     }
-    }
-}
+}       
+.card__bottom > .menu__check {
+    .menu__check__input:checked ~ .menu__check {transform: translatex(-1500px);}}

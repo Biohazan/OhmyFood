@@ -12,26 +12,25 @@
     @include shadow-btn;
     position: relative;
     z-index: 1;
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            content: "";
-            border-radius: 25px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0;
-            background: linear-gradient(175deg, $primary, $second, $primary);
-            transition: opacity 0.8s ease-in-out;
-        }
+        // &:hover {
+        //     &::after {
+        //         opacity: 1;
+        //         animation: rotate 3s ease-in-out infinite;
+        //     }
+        // }
+        // &::after {
+        //     content: "";
+        //     border-radius: 25px;
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     z-index: -1;
+        // }
     }
 }
+
 .commands {
     background-color: $main-background;
     display: flex;
