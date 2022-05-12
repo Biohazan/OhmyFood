@@ -1,6 +1,249 @@
 /* Feuille de styles CSS*/
 /* Color */
 /* Animation */
+/* Apparition Menu (.cards) */
+@-webkit-keyframes menu-anim {
+  0% {
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes menu-anim {
+  0% {
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*  Check Menu (.card__bottom__price) */
+@-webkit-keyframes icon_rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes icon_rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #F6F6F6;
+  opacity: 0;
+}
+
+.box, .box::before, .box::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 230px;
+  height: 200px;
+  margin: auto;
+  color: #0ff8bf;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  opacity: 3;
+}
+
+.box h1 {
+  font-family: 'Shrikhand', sans-serif;
+  margin: 0px;
+  font-size: 40px;
+  color: #0ff8bf;
+}
+
+.box p {
+  font-family: 'Shrikhand', sans-serif;
+}
+
+.box::before, .box::after {
+  content: '';
+  z-index: 1;
+  margin: -10%;
+  -webkit-box-shadow: inset 0 0 0 5px;
+          box-shadow: inset 0 0 0 5px;
+  -webkit-animation: clipMe 8s linear infinite;
+          animation: clipMe 8s linear infinite;
+}
+
+.box::before {
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+}
+
+@-webkit-keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 276px, 5px, 0px);
+  }
+  25% {
+    clip: rect(0px, 5px, 276px, 0px);
+  }
+  50% {
+    clip: rect(271px, 276px, 276px, 0px);
+  }
+  75% {
+    clip: rect(0px, 276px, 276px, 271px);
+  }
+}
+
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 276px, 5px, 0px);
+  }
+  25% {
+    clip: rect(0px, 5px, 276px, 0px);
+  }
+  50% {
+    clip: rect(271px, 276px, 276px, 0px);
+  }
+  75% {
+    clip: rect(0px, 276px, 276px, 271px);
+  }
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+.circle-quart {
+  border-radius: 70px;
+  border: 5px solid transparent;
+  border-top: 5px solid #0ff8bf;
+  border-bottom: 5px solid #0ff8bf;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+
+.circle-quart::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  border-radius: 50px;
+  border: 4px solid transparent;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  -webkit-animation: spin 1s linear  infinite;
+          animation: spin 1s linear  infinite;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes logoanim {
+  0% {
+    -webkit-transform: perspective(300px) rotatey(30deg);
+            transform: perspective(300px) rotatey(30deg);
+  }
+  50% {
+    -webkit-transform: perspective(300px) rotatey(-30deg);
+            transform: perspective(300px) rotatey(-30deg);
+  }
+  100% {
+    -webkit-transform: perspective(300px) rotatey(30deg);
+            transform: perspective(300px) rotatey(30deg);
+  }
+}
+
+@keyframes logoanim {
+  0% {
+    -webkit-transform: perspective(300px) rotatey(30deg);
+            transform: perspective(300px) rotatey(30deg);
+  }
+  50% {
+    -webkit-transform: perspective(300px) rotatey(-30deg);
+            transform: perspective(300px) rotatey(-30deg);
+  }
+  100% {
+    -webkit-transform: perspective(300px) rotatey(30deg);
+            transform: perspective(300px) rotatey(30deg);
+  }
+}
+
 /* Base */
 /* Box-sizing */
 * {
@@ -103,10 +346,16 @@ h2 {
   padding: 16px 25px;
   color: white;
   font-weight: bold;
-  -webkit-box-shadow: 0px 4px 12px #00000084;
-          box-shadow: 0px 4px 12px #00000084;
+  -webkit-box-shadow: 2px 2px 12px #9999999c;
+          box-shadow: 2px 2px 12px #9999999c;
   position: relative;
   z-index: 1;
+}
+
+.buttons a:hover {
+  background: linear-gradient(175deg, #ff83dd, #985ede);
+  -webkit-box-shadow: 0px 4px 12px #00000084;
+          box-shadow: 0px 4px 12px #00000084;
 }
 
 .commands {
@@ -117,7 +366,7 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 35px;
+  padding-top: 15px;
   padding-bottom: 80px;
 }
 
@@ -241,8 +490,70 @@ h2 {
   overflow: hidden;
   background-color: white;
   border-radius: 15px;
-  -webkit-box-shadow: 2px 2px 12px #b6b6b684;
-          box-shadow: 2px 2px 12px #b6b6b684;
+  -webkit-box-shadow: 2px 2px 12px #9999999c;
+          box-shadow: 2px 2px 12px #9999999c;
+  -webkit-animation: menu-anim 1000ms ease-in-out forwards;
+          animation: menu-anim 1000ms ease-in-out forwards;
+}
+
+.card--1 {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+  opacity: 0;
+}
+
+.card--2 {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  opacity: 0;
+}
+
+.card--3 {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+  opacity: 0;
+}
+
+.card--4 {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+  opacity: 0;
+}
+
+.card--5 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  opacity: 0;
+}
+
+.card--6 {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+  opacity: 0;
+}
+
+.card--7 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+  opacity: 0;
+}
+
+.card--8 {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+  opacity: 0;
+}
+
+.card--9 {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+  opacity: 0;
+}
+
+.card--10 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+  opacity: 0;
 }
 
 .card__img {
@@ -280,8 +591,6 @@ h2 {
 .card__bottom__title {
   overflow: hidden;
   padding: 10px 0px;
-  -webkit-transition: margin-right 400ms ease-in-out;
-  transition: margin-right 400ms ease-in-out;
 }
 
 .card__bottom__title h3, .card__bottom__title p {
@@ -295,9 +604,9 @@ h2 {
 .card__bottom__price {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  display: block;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
-  display: block;
 }
 
 .card__bottom__price p {
@@ -307,8 +616,8 @@ h2 {
   font-weight: bold;
 }
 
-.card__bottom:hover .card__bottom__title {
-  margin-right: 75px;
+.card__bottom:hover .card__bottom__title--animation {
+  margin-right: 70px;
 }
 
 .card__bottom:hover .card__bottom__price {
@@ -326,18 +635,9 @@ h2 {
           animation: icon_rotate 400ms 0.1s ease-in-out;
 }
 
-@-webkit-keyframes icon_rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
-}
-
-@keyframes icon_rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
+.card__bottom__title--animation {
+  -webkit-transition: margin-right 400ms ease-in-out;
+  transition: margin-right 400ms ease-in-out;
 }
 
 .menu__check {
@@ -566,8 +866,8 @@ h2 {
   background-color: #F6F6F6;
   padding: 25px;
   margin-left: -35px;
-  -webkit-box-shadow: 2px 2px 12px #b6b6b684;
-          box-shadow: 2px 2px 12px #b6b6b684;
+  -webkit-box-shadow: 2px 2px 12px #9999999c;
+          box-shadow: 2px 2px 12px #9999999c;
 }
 
 .workcard__main__ico {
@@ -726,5 +1026,27 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+@-webkit-keyframes loading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loader {
+  animation: loading 3s ease-in-out reverse;
 }
 /*# sourceMappingURL=style.css.map */

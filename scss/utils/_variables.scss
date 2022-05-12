@@ -8,4 +8,6 @@ $third : #99E2D0;
 
 /* Animation */
 
-$anim-time: 400ms
+$anim-time: 400ms;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 10;

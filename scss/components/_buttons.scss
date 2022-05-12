@@ -9,25 +9,13 @@
     padding: 16px 25px;
     color: white;
     font-weight: bold;
-    @include shadow-btn;
+    @include shadow;
     position: relative;
     z-index: 1;
-        // &:hover {
-        //     &::after {
-        //         opacity: 1;
-        //         animation: rotate 3s ease-in-out infinite;
-        //     }
-        // }
-        // &::after {
-        //     content: "";
-        //     border-radius: 25px;
-        //     position: absolute;
-        //     top: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     left: 0;
-        //     z-index: -1;
-        // }
+        &:hover {
+            background: linear-gradient(175deg, lighten($second, 2%), lighten($primary, 2%));
+            @include shadow-btn
+        }
     }
 }
 
@@ -35,7 +23,7 @@
     background-color: $main-background;
     display: flex;
     justify-content: center;
-    padding-top: 35px;
+    padding-top: 15px;
     padding-bottom: 80px;
     & a{
     padding: 17px 55px;

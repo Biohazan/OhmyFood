@@ -8,6 +8,13 @@
     background-color: white;
     border-radius: 15px;
     @include shadow;
+    animation: menu-anim $anim-dur ease-in-out forwards;
+    @for $i from 1 through 10 {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i;
+            opacity: 0;
+        }
+    }
     &__img {
         background-position: bottom;
         background-size: cover;
@@ -30,10 +37,10 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 20px;
+        
         &__title {
             overflow: hidden;
             padding: 10px 0px;
-            transition: margin-right $anim-time ease-in-out;
                 & h3, & p { margin: 0px; 
                             line-height: 25px; 
                             overflow: hidden; 
@@ -42,8 +49,8 @@
         }
         &__price {
             align-self: flex-end;
-            transition: all $anim-time ease-in-out;
             display: block;
+            transition: all $anim-time ease-in-out;
             & p {
                 padding: 10px 0px;
                 margin: 0px;
@@ -52,7 +59,7 @@
             }  
         }
         &:hover {
-            .card__bottom__title {margin-right: 75px;}
+            .card__bottom__title--animation {margin-right: 70px;}
             .card__bottom__price {
                 transform: translateX(-65px);
             }
@@ -65,9 +72,8 @@
         }
     }
 }   
-@keyframes icon_rotate {
-    to {transform: rotate(1turn)};
-}      
+.card__bottom__title--animation {transition: margin-right $anim-time ease-in-out;}
+
 .menu__check {
     position: absolute;
     top: 0;

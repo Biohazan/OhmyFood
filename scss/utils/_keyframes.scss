@@ -1,0 +1,20 @@
+// Keyframes //
+
+/* Apparition Menu (.cards) */
+
+
+@keyframes menu-anim {
+    0% {
+        transform: translateY(1vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;}
+}
+
+/*  Check Menu (.card__bottom__price) */
+
+@keyframes icon_rotate {
+    to {transform: rotate(1turn)};
+} 

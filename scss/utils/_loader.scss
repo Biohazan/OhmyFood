@@ -1,0 +1,113 @@
+// Loader //
+
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $main-background;
+    opacity: 0;
+}
+
+$anime-time: 8s;
+$box-size: 230px;
+$clip-distance: .1;
+$clip-size: $box-size * (1 + $clip-distance * 2);
+$path-width: 5px;
+$main-color: #0ff8bf;
+%full-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  @extend %full-fill;
+  width: $box-size;
+  height: 200px;
+  margin: auto;
+  color: $main-color;
+  background-image: linear-gradient($primary, $second);
+  opacity: 3;
+    & h1 {
+        font-family: 'Shrikhand', sans-serif;
+        margin: 0px;
+        font-size: 40px;
+        color: #0ff8bf;}
+    & p {font-family: 'Shrikhand', sans-serif;}
+    &::before,
+    &::after {
+        @extend %full-fill;
+        content: '';
+        z-index: 1;
+        margin: -1 * $clip-distance * 100%;
+        box-shadow: inset 0 0 0 $path-width; 
+        animation: clipMe $anime-time linear infinite;
+    }
+    &::before {
+        animation-delay: $anime-time * -.5;
+    }
+  // for debug
+//   &:hover {
+//     &::after,
+//     &::before {
+//       background-color: rgba(#f00, .3);
+//     }
+//   }
+}
+
+@keyframes clipMe {
+  0%, 100% {clip: rect(0px, $clip-size, $path-width, 0px); }
+  25% {clip: rect(0px, $path-width, $clip-size, 0px); }
+  50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
+  75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.circle-quart {
+    border-radius: 70px;
+    border: 5px solid transparent;
+    border-top: 5px solid #0ff8bf;
+    border-bottom: 5px solid #0ff8bf;
+    animation: spin 3s linear infinite;
+}
+.circle-quart::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    left: 5px;
+    border-radius: 50px;
+    border: 4px solid transparent;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    animation: spin 1s linear  infinite;
+    opacity: 0.5;
+}
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes spinreverse {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+@keyframes logoanim {
+    0% {transform: perspective(300px) rotatey(30deg)}
+    50% {transform: perspective(300px) rotatey(-30deg)}
+    100% {transform: perspective(300px) rotatey(30deg)}
+}
