@@ -1,13 +1,22 @@
-// Variable //
+// Variables //
 
 /* Color */
 $main-background : #F6F6F6;
 $primary: #9356DC;
 $second : #FF79DA;
 $third : #99E2D0;
+$load-color: #2eedb7;
 
 /* Animation */
 
 $anim-time: 400ms;
 $anim-dur: 1000ms;
 $anim-delay: $anim-dur / 10;
+
+/* Loader */
+
+$anime-time: 8s;
+$box-size: 200px;
+$clip-distance: .1;
+$clip-size: $box-size * (1 + $clip-distance * 2);
+$path-width: 5px;

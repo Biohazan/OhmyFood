@@ -1,8 +1,23 @@
 /* Feuille de styles CSS*/
 /* Color */
 /* Animation */
+/* Loader */
+/* Shop scale hover */
+@-webkit-keyframes shop_scale {
+  to {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+@keyframes shop_scale {
+  to {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
 /* Apparition Menu (.cards) */
-@-webkit-keyframes menu-anim {
+@-webkit-keyframes menu_anim {
   0% {
     -webkit-transform: translateY(1vh);
             transform: translateY(1vh);
@@ -14,7 +29,7 @@
     opacity: 1;
   }
 }
-@keyframes menu-anim {
+@keyframes menu_anim {
   0% {
     -webkit-transform: translateY(1vh);
             transform: translateY(1vh);
@@ -41,14 +56,82 @@
   }
 }
 
+/* Loader (.loader) */
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes spinreverse {
+  from {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  from {
+    opacity: 1;
+    z-index: 2;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 1;
+    z-index: 2;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 .loader {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 1;
   background-color: #F6F6F6;
+  -webkit-animation: loading 3s linear;
+          animation: loading 3s linear;
+  z-index: -1;
   opacity: 0;
 }
 
@@ -61,6 +144,7 @@
 }
 
 .box {
+  z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,29 +158,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 230px;
+  width: 200px;
   height: 200px;
   margin: auto;
-  color: #0ff8bf;
+  border-radius: 25px;
+  color: #2eedb7;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(#9356DC, #FF79DA);
-  opacity: 3;
 }
 
 .box h1 {
   font-family: 'Shrikhand', sans-serif;
-  margin: 0px;
-  font-size: 40px;
-  color: #0ff8bf;
+  margin: 10px 0px;
+  font-size: 34px;
 }
 
 .box p {
   font-family: 'Shrikhand', sans-serif;
+  margin: 0px;
 }
 
 .box::before, .box::after {
   content: '';
-  z-index: 1;
   margin: -10%;
   -webkit-box-shadow: inset 0 0 0 5px;
           box-shadow: inset 0 0 0 5px;
@@ -111,31 +194,31 @@
 
 @-webkit-keyframes clipMe {
   0%, 100% {
-    clip: rect(0px, 276px, 5px, 0px);
+    clip: rect(0px, 240px, 5px, 0px);
   }
   25% {
-    clip: rect(0px, 5px, 276px, 0px);
+    clip: rect(0px, 5px, 240px, 0px);
   }
   50% {
-    clip: rect(271px, 276px, 276px, 0px);
+    clip: rect(235px, 240px, 240px, 0px);
   }
   75% {
-    clip: rect(0px, 276px, 276px, 271px);
+    clip: rect(0px, 240px, 240px, 235px);
   }
 }
 
 @keyframes clipMe {
   0%, 100% {
-    clip: rect(0px, 276px, 5px, 0px);
+    clip: rect(0px, 240px, 5px, 0px);
   }
   25% {
-    clip: rect(0px, 5px, 276px, 0px);
+    clip: rect(0px, 5px, 240px, 0px);
   }
   50% {
-    clip: rect(271px, 276px, 276px, 0px);
+    clip: rect(235px, 240px, 240px, 0px);
   }
   75% {
-    clip: rect(0px, 276px, 276px, 271px);
+    clip: rect(0px, 240px, 240px, 235px);
   }
 }
 
@@ -170,80 +253,6 @@
   opacity: 0.5;
 }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spinreverse {
-  from {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes spinreverse {
-  from {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes logoanim {
-  0% {
-    -webkit-transform: perspective(300px) rotatey(30deg);
-            transform: perspective(300px) rotatey(30deg);
-  }
-  50% {
-    -webkit-transform: perspective(300px) rotatey(-30deg);
-            transform: perspective(300px) rotatey(-30deg);
-  }
-  100% {
-    -webkit-transform: perspective(300px) rotatey(30deg);
-            transform: perspective(300px) rotatey(30deg);
-  }
-}
-
-@keyframes logoanim {
-  0% {
-    -webkit-transform: perspective(300px) rotatey(30deg);
-            transform: perspective(300px) rotatey(30deg);
-  }
-  50% {
-    -webkit-transform: perspective(300px) rotatey(-30deg);
-            transform: perspective(300px) rotatey(-30deg);
-  }
-  100% {
-    -webkit-transform: perspective(300px) rotatey(30deg);
-            transform: perspective(300px) rotatey(30deg);
-  }
-}
-
 /* Base */
 /* Box-sizing */
 * {
@@ -263,13 +272,13 @@ body {
 
 h1 {
   font-family: 'Roboto Bold 800', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
 }
 
 h2 {
   font-family: 'Roboto Bold 800', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   margin: 0px;
   font-weight: 800;
 }
@@ -315,6 +324,10 @@ h2 {
   font-size: 12px;
 }
 
+.card__bottom__title p {
+  font-size: 15px;
+}
+
 .foot__title {
   font-size: 20px;
 }
@@ -345,11 +358,9 @@ h2 {
   border-radius: 25px;
   padding: 16px 25px;
   color: white;
-  font-weight: bold;
   -webkit-box-shadow: 2px 2px 12px #9999999c;
           box-shadow: 2px 2px 12px #9999999c;
   position: relative;
-  z-index: 1;
 }
 
 .buttons a:hover {
@@ -366,8 +377,8 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 80px;
+  padding-top: 35px;
+  padding-bottom: 60px;
 }
 
 .commands a {
@@ -492,8 +503,8 @@ h2 {
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px 12px #9999999c;
           box-shadow: 2px 2px 12px #9999999c;
-  -webkit-animation: menu-anim 1000ms ease-in-out forwards;
-          animation: menu-anim 1000ms ease-in-out forwards;
+  -webkit-animation: menu_anim 1000ms ease-in-out forwards;
+          animation: menu_anim 1000ms ease-in-out forwards;
 }
 
 .card--1 {
@@ -635,11 +646,6 @@ h2 {
           animation: icon_rotate 400ms 0.1s ease-in-out;
 }
 
-.card__bottom__title--animation {
-  -webkit-transition: margin-right 400ms ease-in-out;
-  transition: margin-right 400ms ease-in-out;
-}
-
 .menu__check {
   position: absolute;
   top: 0;
@@ -654,7 +660,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   background-color: #99E2D0;
-  width: 70px;
+  width: 60px;
   height: 100%;
   cursor: pointer;
   -webkit-transform: translatex(100px);
@@ -677,28 +683,33 @@ h2 {
           transform: translatex(-1500px);
 }
 
+/* Animation */
+.card__bottom__title--animation {
+  -webkit-transition: margin-right 400ms ease-in-out;
+  transition: margin-right 400ms ease-in-out;
+}
+
 /* Footer */
 .foot {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: #353535;
   color: white;
-  padding: 25px 0px;
+  padding: 5px 25px;
+  padding-bottom: 25px;
 }
 
 .foot__title {
   font-family: 'Shrikhand',sans-serif;
-  margin: 0px;
+  margin-bottom: 20px;
 }
 
 .foot__link {
@@ -711,22 +722,6 @@ h2 {
 
 .foot__link i {
   margin-right: 15px;
-}
-
-@media screen and (max-width: 768px) {
-  .foot {
-    padding: 25px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .foot__title {
-    margin-bottom: 20px;
-  }
 }
 
 /* Localisation */
@@ -804,6 +799,10 @@ h2 {
   background-color: #F6F6F6;
   padding: 30px 30px 70px;
   gap: 15px;
+}
+
+.explore__text {
+  padding: 0px 20px;
 }
 
 /* Working */
@@ -1004,7 +1003,18 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+
+.menu__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 35px;
 }
 
 .cards__grid {
@@ -1026,27 +1036,5 @@ h2 {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-}
-
-@-webkit-keyframes loading {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes loading {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.loader {
-  animation: loading 3s ease-in-out reverse;
 }
 /*# sourceMappingURL=style.css.map */

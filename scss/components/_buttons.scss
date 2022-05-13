@@ -8,10 +8,8 @@
     border-radius: 25px;
     padding: 16px 25px;
     color: white;
-    font-weight: bold;
     @include shadow;
     position: relative;
-    z-index: 1;
         &:hover {
             background: linear-gradient(175deg, lighten($second, 2%), lighten($primary, 2%));
             @include shadow-btn
@@ -23,8 +21,8 @@
     background-color: $main-background;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 80px;
+    padding-top: 35px;
+    padding-bottom: 60px;
     & a{
     padding: 17px 55px;
     }

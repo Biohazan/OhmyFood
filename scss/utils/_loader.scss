@@ -6,17 +6,12 @@
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 1;
     background-color: $main-background;
+    animation: loading 3s linear;
+    z-index: -1;
     opacity: 0;
 }
 
-$anime-time: 8s;
-$box-size: 230px;
-$clip-distance: .1;
-$clip-size: $box-size * (1 + $clip-distance * 2);
-$path-width: 5px;
-$main-color: #0ff8bf;
 %full-fill {
   position: absolute;
   top: 0;
@@ -26,42 +21,42 @@ $main-color: #0ff8bf;
 }
 
 .box {
+    z-index: -1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  @extend %full-fill;
-  width: $box-size;
-  height: 200px;
-  margin: auto;
-  color: $main-color;
-  background-image: linear-gradient($primary, $second);
-  opacity: 3;
-    & h1 {
-        font-family: 'Shrikhand', sans-serif;
-        margin: 0px;
-        font-size: 40px;
-        color: #0ff8bf;}
-    & p {font-family: 'Shrikhand', sans-serif;}
-    &::before,
-    &::after {
-        @extend %full-fill;
-        content: '';
-        z-index: 1;
-        margin: -1 * $clip-distance * 100%;
-        box-shadow: inset 0 0 0 $path-width; 
-        animation: clipMe $anime-time linear infinite;
-    }
-    &::before {
-        animation-delay: $anime-time * -.5;
-    }
-  // for debug
-//   &:hover {
-//     &::after,
-//     &::before {
-//       background-color: rgba(#f00, .3);
-//     }
-//   }
+    @extend %full-fill;
+    width: $box-size;
+    height: 200px;
+    margin: auto;
+    border-radius: 25px;
+    color: $load-color;
+    background-image: linear-gradient($primary, $second);
+        & h1 {
+            font-family: 'Shrikhand', sans-serif;
+            margin: 10px 0px;
+            font-size: 34px;
+            }
+        & p {font-family: 'Shrikhand', sans-serif; margin: 0px;}
+        &::before,
+        &::after {
+            @extend %full-fill;
+            content: '';
+            margin: -1 * $clip-distance * 100%;
+            box-shadow: inset 0 0 0 $path-width; 
+            animation: clipMe $anime-time linear infinite;
+        }
+        &::before {
+            animation-delay: $anime-time * -.5;
+        }
+    // for debug
+    //   &:hover {
+    //     &::after,
+    //     &::before {
+    //       background-color: rgba(#f00, .3);
+    //     }
+    //   }
 }
 
 @keyframes clipMe {
@@ -76,7 +71,6 @@ $main-color: #0ff8bf;
     height: 70px;
     position: relative;
 }
-
 .circle-quart {
     border-radius: 70px;
     border: 5px solid transparent;
@@ -98,16 +92,4 @@ $main-color: #0ff8bf;
     animation: spin 1s linear  infinite;
     opacity: 0.5;
 }
-@keyframes spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-@keyframes spinreverse {
-    from {transform: rotate(360deg);}
-    to {transform: rotate(0deg);}
-}
-@keyframes logoanim {
-    0% {transform: perspective(300px) rotatey(30deg)}
-    50% {transform: perspective(300px) rotatey(-30deg)}
-    100% {transform: perspective(300px) rotatey(30deg)}
-}
+

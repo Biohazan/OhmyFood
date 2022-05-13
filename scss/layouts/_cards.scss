@@ -8,7 +8,7 @@
     background-color: white;
     border-radius: 15px;
     @include shadow;
-    animation: menu-anim $anim-dur ease-in-out forwards;
+    animation: menu_anim $anim-dur ease-in-out forwards;
     @for $i from 1 through 10 {
         &--#{$i} {
             animation-delay: $anim-delay * $i;
@@ -37,7 +37,6 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 20px;
-        
         &__title {
             overflow: hidden;
             padding: 10px 0px;
@@ -71,9 +70,7 @@
             } 
         }
     }
-}   
-.card__bottom__title--animation {transition: margin-right $anim-time ease-in-out;}
-
+}
 .menu__check {
     position: absolute;
     top: 0;
@@ -82,7 +79,7 @@
     justify-content: center;
     align-items: center;
     background-color: $third;
-    width: 70px;
+    width: 60px;
     height: 100%;
     cursor: pointer;
     transform: translatex(100px);
@@ -95,3 +92,10 @@
 }       
 .card__bottom > .menu__check {
     .menu__check__input:checked ~ .menu__check {transform: translatex(-1500px);}}
+
+/* Animation */
+
+// .anim-shop {
+//     &:hover {animation: shopscale 200ms;}
+// }
+.card__bottom__title--animation {transition: margin-right $anim-time ease-in-out;}

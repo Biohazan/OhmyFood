@@ -43,9 +43,11 @@
     background-color: $main-background;
     padding: 30px 30px 70px;
     gap: 15px;
+    &__text {
+        padding: 0px 20px;
+    }
 }    
     
-
 /* Working */
 
 @mixin workcard-hover {
@@ -133,6 +135,4 @@
         flex-direction: column;
     }
 }
-
-
 

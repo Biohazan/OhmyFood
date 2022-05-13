@@ -37,7 +37,12 @@
     &__cards {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
+    }
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
     }
 }
 .cards__grid {
@@ -52,8 +57,3 @@
         flex-direction: column;
     }
 }
-@keyframes loading {
-    from {opacity: 0}
-    to {opacity: 1}
-}
-.loader {animation: loading 3s ease-in-out reverse;}

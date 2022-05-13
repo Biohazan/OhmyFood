@@ -1,20 +1,37 @@
 // Keyframes //
 
+/* Shop scale hover */
+@keyframes shop_scale {
+    to {transform: scale(2);}
+}
+
 /* Apparition Menu (.cards) */
-
-
-@keyframes menu-anim {
+@keyframes menu_anim {
     0% {
         transform: translateY(1vh);
         opacity: 0;
     }
     100% {
         transform: translateY(0px);
-        opacity: 1;}
+        opacity: 1;
+        
+    }
 }
-
 /*  Check Menu (.card__bottom__price) */
-
 @keyframes icon_rotate {
     to {transform: rotate(1turn)};
 } 
+
+/* Loader (.loader) */
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes spinreverse {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+@keyframes loading {
+    from {opacity: 1; z-index: 2}
+    to {opacity: 0; z-index: -1}
+}
