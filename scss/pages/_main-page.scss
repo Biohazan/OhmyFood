@@ -7,31 +7,29 @@
 .localisation{
     border-top: #D5D5D5 solid 3px;
     background-color: #EAEAEA;
+    &__grid {
     display: flex;
     justify-content: center;
-        & a{
-        display: flex;
-        align-items: center;
-        position: relative;
-        padding: 5px;
-        gap: 10px;
-        margin-left: 55px;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin-left: 60px;
+    }
+    &__input {
+        background-color:  transparent;
+        border: $main-background;
+        outline: none;
+        border-radius: 15px;
+        color: black;
+        padding: 7px;
+        &:focus { background-color: darken($main-background, 15%);
         }
-        &__city input {
-            background-color:  transparent;
-            border: $main-background;
-            outline: none;
-            border-radius: 15px;
+        &::placeholder {
             color: black;
-            padding: 7px;
-            &:focus { background-color: darken($main-background, 15%);
-            }
-            &::placeholder {
-                color: black;
-                font-family: 'Roboto', sans-serif;
-                font-weight: bold;
-            }
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
         }
+    }
 }
 
 /* Explore */
@@ -127,12 +125,15 @@
         }
 }
 
-
+@media screen and (min-width:768px) and (max-width:1036px) {
+    .heart {top: 86%;}
+}
 @media screen and (max-width:768px) {
     .working {flex-direction: column;
     align-items: flex-start;}
     .shops__grid {
         flex-direction: column;
     }
+    
 }
 

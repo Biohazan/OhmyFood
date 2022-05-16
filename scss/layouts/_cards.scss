@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     background-color: white;
     border-radius: 15px;
     @include shadow;
@@ -63,13 +63,18 @@
                 transform: translateX(-65px);
             }
             .menu__check {
-                transform: translatex(-0px);
+                animation: anim_check $anim-time ease-in-out forwards;
                 & i{
                 animation: icon_rotate $anim-time 0.1s ease-in-out;
                 }
             } 
         }
     }
+}
+.heart-shop {
+    position: absolute;
+    top: 80%;
+    right: 5%;
 }
 .menu__check {
     position: absolute;
@@ -79,23 +84,26 @@
     justify-content: center;
     align-items: center;
     background-color: $third;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     width: 60px;
     height: 100%;
     cursor: pointer;
-    transform: translatex(100px);
+    transform: translatex(70px);
     transition: all $anim-time ease-in-out;
-    &__input {display: none;}
+    // & input {display: none;}
     & i {
         font-size: 22px;
         color: white;
     }
 }       
-.card__bottom > .menu__check {
-    .menu__check__input:checked ~ .menu__check {transform: translatex(-1500px);}}
+
+.menucheckbox:checked ~ .card__bottom {background-color: red;}
 
 /* Animation */
 
-// .anim-shop {
-//     &:hover {animation: shopscale 200ms;}
-// }
 .card__bottom__title--animation {transition: margin-right $anim-time ease-in-out;}
+
+@keyframes anim_check {
+    to {transform: translatex(0px);}
+}

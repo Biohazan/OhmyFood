@@ -18,12 +18,12 @@
                 <img src="images/logo/ohmyfood.png" alt="Logo-small" srcset="images/logo/ohmyfood@2x.svg 2x">
             </div>
                 <div class="localisation">
-                    <a href="#">
+                    <div class="localisation__grid">
                         <i class="fa-solid fa-location-dot"></i>
                         <form action="#" method="post">
-                            <div class="localisation__city"><input type="text" placeholder="Paris, Belleville" ></div>                         
-                        </form>
-                    </a>
+                            <input type="text" placeholder="Paris, Belleville" class="localisation__input">                        
+                        </form>  
+                    </div>                  
                 </div>
             
         </header>
@@ -71,24 +71,28 @@
             <div class="shops" id="shops">
                 <h2>Restaurants</h2>
                 <div class="shops__grid">
-                    <a href="menu__palette_du_gout.html" class="card card--1 anim-shop">
-                        <div class="card__img" id="img__palette__du__gout">                        
-                            <div class="card__new">Nouveau</div>
-                        </div>                    
-                        <div class="card__bottom">                        
-                            <div class="card__bottom__title">
-                                <h3>La palette du goût</h3>
-                                <p>Ménilmontant</p>
+                    <div class="card card--1 anim-shop">
+                        <a href="menu__palette_du_gout.html">
+                            <div class="card__img" id="img__palette__du__gout">                        
+                                <div class="card__new">Nouveau</div>
+                            </div>                    
+                            <div class="card__bottom">                        
+                                <div class="card__bottom__title">
+                                    <h3>La palette du goût</h3>
+                                    <p>Ménilmontant</p>
+                                </div>
                             </div>
-                                <label class="heart">
+                            </a>
+                                <label class="heart heart-shop">
                                     <input type="checkbox" class="check-heart">
                                     <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
                                     <span class="heart-color"><i class="fa-solid fa-heart "></i></span>
                                 </label>
-                        </div>
+                    </div>
                         
-                    </a>
-                    <a href="menu_note_enchantee.html" class="card card--2 anim-shop">
+                      
+                <div class="card card--2 anim-shop">
+                    <a href="menu_note_enchantee.html">
                         <div class="card__img" id="img__note__enchantee">                        
                             <div class="card__new">Nouveau</div>
                         </div>                    
@@ -97,14 +101,16 @@
                                 <h3>La note enchantée</h3>
                                 <p>Charonne</p>
                             </div>
-                            <label class="heart">
+                        </div>
+                        </a>
+                            <label class="heart heart-shop">
                                 <input type="checkbox" class="check-heart">
                                 <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
-                                <span class="heart-color"><i class="fa-solid fa-heart"></i></span>
+                                <span class="heart-color"><i class="fa-solid fa-heart "></i></span>
                             </label>
-                        </div>
-                    </a>
-                    <a href="menu_la_francaise.html" class="card card--3 anim-shop">
+                </div>
+                <div class="card card--3 anim-shop">
+                    <a href="menu_la_francaise.html">
                         <div class="card__img" id="img__a__la__francaise">
                         </div>                    
                         <div class="card__bottom">                        
@@ -112,14 +118,16 @@
                                 <h3>A la francaise</h3>
                                 <p>Cité Rouge</p>
                             </div>
-                            <label class="heart">
-                                <input type="checkbox" class="check-heart">
-                                <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
-                                <span class="heart-color"><i class="fa-solid fa-heart"></i></span>
-                            </label>
                         </div>
                     </a>
-                    <a href="menu_delice_des_sens.html" class="card card--4 anim-shop">
+                        <label class="heart heart-shop">
+                            <input type="checkbox" class="check-heart">
+                            <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
+                            <span class="heart-color"><i class="fa-solid fa-heart "></i></span>
+                        </label>
+                    </div>
+                <div class="card card--4 anim-shop">
+                    <a href="menu_delice_des_sens.html">
                         <div class="card__img" id="img__delice__des__sens">
                         </div>                    
                         <div class="card__bottom">                        
@@ -127,22 +135,23 @@
                                 <h3>Le delice des sens</h3>
                                 <p>Folie-Méricourt</p>
                             </div>
-                            <label class="heart">
-                                <input type="checkbox" class="check-heart">
-                                <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
-                                <span class="heart-color"><i class="fa-solid fa-heart"></i></span>
-                            </label>
                         </div>
                     </a>
+                        <label class="heart heart-shop">
+                            <input type="checkbox" class="check-heart">
+                            <span class="heart-white"><i class="fa-solid fa-heart"></i></span>
+                            <span class="heart-color"><i class="fa-solid fa-heart "></i></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="loader">
-                <span class="box">
+                <div class="box">
                     <span class="circle circle-quart"></span>
                     <h1>Ohmyfood</h1>
                     <p>chargement...</p>
-                </span>
+                </div>
         </section>
         <footer>
             <div class="foot">

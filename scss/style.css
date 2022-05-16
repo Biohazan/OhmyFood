@@ -162,7 +162,7 @@
   height: 200px;
   margin: auto;
   border-radius: 25px;
-  color: #2eedb7;
+  color: #99E2D0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(#9356DC, #FF79DA);
 }
@@ -498,7 +498,6 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  overflow: hidden;
   background-color: white;
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px 12px #9999999c;
@@ -637,13 +636,19 @@ h2 {
 }
 
 .card__bottom:hover .menu__check {
-  -webkit-transform: translatex(0px);
-          transform: translatex(0px);
+  -webkit-animation: anim_check 400ms ease-in-out forwards;
+          animation: anim_check 400ms ease-in-out forwards;
 }
 
 .card__bottom:hover .menu__check i {
   -webkit-animation: icon_rotate 400ms 0.1s ease-in-out;
           animation: icon_rotate 400ms 0.1s ease-in-out;
+}
+
+.heart-shop {
+  position: absolute;
+  top: 80%;
+  right: 5%;
 }
 
 .menu__check {
@@ -660,17 +665,15 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   background-color: #99E2D0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   width: 60px;
   height: 100%;
   cursor: pointer;
-  -webkit-transform: translatex(100px);
-          transform: translatex(100px);
+  -webkit-transform: translatex(70px);
+          transform: translatex(70px);
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
-}
-
-.menu__check__input {
-  display: none;
 }
 
 .menu__check i {
@@ -678,15 +681,28 @@ h2 {
   color: white;
 }
 
-.card__bottom > .menu__check .menu__check__input:checked ~ .menu__check {
-  -webkit-transform: translatex(-1500px);
-          transform: translatex(-1500px);
+.menucheckbox:checked ~ .card__bottom {
+  background-color: red;
 }
 
 /* Animation */
 .card__bottom__title--animation {
   -webkit-transition: margin-right 400ms ease-in-out;
   transition: margin-right 400ms ease-in-out;
+}
+
+@-webkit-keyframes anim_check {
+  to {
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
+}
+
+@keyframes anim_check {
+  to {
+    -webkit-transform: translatex(0px);
+            transform: translatex(0px);
+  }
 }
 
 /* Footer */
@@ -728,28 +744,24 @@ h2 {
 .localisation {
   border-top: #D5D5D5 solid 3px;
   background-color: #EAEAEA;
+}
+
+.localisation__grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.localisation a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  padding: 5px;
+  padding: 10px;
   gap: 10px;
-  margin-left: 55px;
+  margin-left: 60px;
 }
 
-.localisation__city input {
+.localisation__input {
   background-color: transparent;
   border: #F6F6F6;
   outline: none;
@@ -758,29 +770,29 @@ h2 {
   padding: 7px;
 }
 
-.localisation__city input:focus {
+.localisation__input:focus {
   background-color: #d0d0d0;
 }
 
-.localisation__city input::-webkit-input-placeholder {
+.localisation__input::-webkit-input-placeholder {
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
-.localisation__city input:-ms-input-placeholder {
+.localisation__input:-ms-input-placeholder {
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
-.localisation__city input::-ms-input-placeholder {
+.localisation__input::-ms-input-placeholder {
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
 }
 
-.localisation__city input::placeholder {
+.localisation__input::placeholder {
   color: black;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
@@ -925,6 +937,12 @@ h2 {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1036px) {
+  .heart {
+    top: 86%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .working {
     -webkit-box-orient: vertical;
@@ -958,7 +976,6 @@ h2 {
 .menu {
   position: relative;
   margin-top: 225px;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1014,7 +1031,9 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 35px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .cards__grid {
@@ -1026,10 +1045,16 @@ h2 {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 15px;
-  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
+  .menu__grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 35px;
+  }
   .cards__grid {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
