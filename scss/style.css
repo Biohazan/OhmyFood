@@ -2,20 +2,6 @@
 /* Color */
 /* Animation */
 /* Loader */
-/* Shop scale hover */
-@-webkit-keyframes shop_scale {
-  to {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-  }
-}
-@keyframes shop_scale {
-  to {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-  }
-}
-
 /* Apparition Menu (.cards) */
 @-webkit-keyframes menu_anim {
   0% {
@@ -39,20 +25,6 @@
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
     opacity: 1;
-  }
-}
-
-/*  Check Menu (.card__bottom__price) */
-@-webkit-keyframes icon_rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
-}
-@keyframes icon_rotate {
-  to {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
   }
 }
 
@@ -361,6 +333,8 @@ h2 {
   -webkit-box-shadow: 2px 2px 12px #9999999c;
           box-shadow: 2px 2px 12px #9999999c;
   position: relative;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .buttons a:hover {
@@ -417,6 +391,12 @@ h2 {
   transition: -webkit-transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+}
+
+.heart-shop {
+  position: absolute;
+  top: 80%;
+  right: 5%;
 }
 
 .check-heart {
@@ -498,6 +478,7 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  overflow: hidden;
   background-color: white;
   border-radius: 15px;
   -webkit-box-shadow: 2px 2px 12px #9999999c;
@@ -635,23 +616,18 @@ h2 {
           transform: translateX(-65px);
 }
 
-.card__bottom:hover .menu__check {
-  -webkit-animation: anim_check 400ms ease-in-out forwards;
-          animation: anim_check 400ms ease-in-out forwards;
+.card__bottom:hover .card__check {
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
 }
 
-.card__bottom:hover .menu__check i {
+.card__bottom:hover .card__check i {
+  display: block;
   -webkit-animation: icon_rotate 400ms 0.1s ease-in-out;
           animation: icon_rotate 400ms 0.1s ease-in-out;
 }
 
-.heart-shop {
-  position: absolute;
-  top: 80%;
-  right: 5%;
-}
-
-.menu__check {
+.card__check {
   position: absolute;
   top: 0;
   right: 0;
@@ -676,13 +652,9 @@ h2 {
   transition: all 400ms ease-in-out;
 }
 
-.menu__check i {
+.card__check i {
   font-size: 22px;
   color: white;
-}
-
-.menucheckbox:checked ~ .card__bottom {
-  background-color: red;
 }
 
 /* Animation */
@@ -691,17 +663,17 @@ h2 {
   transition: margin-right 400ms ease-in-out;
 }
 
-@-webkit-keyframes anim_check {
+@-webkit-keyframes icon_rotate {
   to {
-    -webkit-transform: translatex(0px);
-            transform: translatex(0px);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 
-@keyframes anim_check {
+@keyframes icon_rotate {
   to {
-    -webkit-transform: translatex(0px);
-            transform: translatex(0px);
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
   }
 }
 
@@ -734,10 +706,17 @@ h2 {
   display: -ms-flexbox;
   display: flex;
   padding: 5px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .foot__link i {
   margin-right: 15px;
+}
+
+.foot__link:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 /* Localisation */
@@ -1021,19 +1000,7 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-}
-
-.menu__grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
 }
 
 .cards__grid {
@@ -1047,15 +1014,14 @@ h2 {
   gap: 15px;
 }
 
-@media screen and (max-width: 768px) {
-  .menu__grid {
+@media screen and (max-width: 1090px) {
+  .cards__grid {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 35px;
   }
-  .cards__grid {
+  .menu__grid {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

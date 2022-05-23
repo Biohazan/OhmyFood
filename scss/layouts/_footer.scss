@@ -16,8 +16,10 @@
          color: white;
          display: flex;
          padding: 5px;
+         transition: 0.2s ease-in-out;
           & i {
               margin-right: 15px;              
           }
+        &:hover {transform: scale(1.05);}
      }
 }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    // overflow: hidden;
+    overflow: hidden;
     background-color: white;
     border-radius: 15px;
     @include shadow;
@@ -62,21 +62,17 @@
             .card__bottom__price {
                 transform: translateX(-65px);
             }
-            .menu__check {
-                animation: anim_check $anim-time ease-in-out forwards;
+            .card__check {
+                transform: translate(0px);
                 & i{
+                    display: block;
                 animation: icon_rotate $anim-time 0.1s ease-in-out;
                 }
             } 
         }
     }
 }
-.heart-shop {
-    position: absolute;
-    top: 80%;
-    right: 5%;
-}
-.menu__check {
+.card__check {
     position: absolute;
     top: 0;
     right: 0;
@@ -91,19 +87,16 @@
     cursor: pointer;
     transform: translatex(70px);
     transition: all $anim-time ease-in-out;
-    // & input {display: none;}
     & i {
         font-size: 22px;
         color: white;
     }
 }       
 
-.menucheckbox:checked ~ .card__bottom {background-color: red;}
-
 /* Animation */
 
 .card__bottom__title--animation {transition: margin-right $anim-time ease-in-out;}
 
-@keyframes anim_check {
-    to {transform: translatex(0px);}
-}
+@keyframes icon_rotate {
+    to {transform: rotate(1turn)};
+} 
