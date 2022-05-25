@@ -14,8 +14,12 @@ h2 {
     margin: 0px;
     font-weight: 800;
 }
+/* Header */
 .heading a {font-size: 20px;}
+/* Buttons */
 .buttons a {font-size: 15px;}
+
+/* Main-page */
 .localisation {
     & a{
         & i{font-size: 16px;}
@@ -37,6 +41,9 @@ h2 {
     margin: 0px;
     }
 }
+.heart {font-size: 25px;}
+
+/* Cards */
 .cards {
     &__new {font-size: 13px;}
     &__bottom {
@@ -47,6 +54,8 @@ h2 {
     &__new {font-size: 12px;}
     &__bottom__title p {font-size: 15px;}
 }
+
+/* Footer */
 .foot {
     &__title {font-size: 20px;}
     &__link {font-size: 15px;
@@ -54,4 +63,3 @@ h2 {
              width: 15px;}
     }
 }
-.heart {font-size: 25px;}

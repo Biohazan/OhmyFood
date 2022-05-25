@@ -14,9 +14,7 @@
 .menu {
     position: relative;
     margin-top: 225px;
-    // width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include flexcol;
     justify-content: space-between;
     background-color: $main-background;
     border-top-left-radius: 40px;
@@ -35,15 +33,13 @@
         line-height: 25px;
     }
     &__cards {
-        display: flex;
-        flex-direction: column;
+        @include flexcol;
         gap: 20px;
         width: 100%;
     }
 }
 .cards__grid {
     display: flex;
-    flex-direction: row;
     gap: 15px;
 }
 
@@ -51,5 +47,4 @@
     .cards__grid {
         flex-direction: column;
     }
-    .menu__grid {flex-direction: column;}
 }

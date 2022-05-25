@@ -1,7 +1,5 @@
 // Main page //
 
-
-
 /* Localisation */
 
 .localisation{
@@ -35,8 +33,7 @@
 /* Explore */
 
 .explore {
-    display: flex;
-    flex-direction: column;
+    @include flexcol;
     text-align: center;
     background-color: $main-background;
     padding: 30px 30px 70px;
@@ -48,23 +45,14 @@
     
 /* Working */
 
-@mixin workcard-hover {
-    .workcard__main:hover {
-        background-color: #F5EDFF;
-        border: #F5EDFF solid 10px;
-        .workcard__main__ico {color: $primary;}  
-    }                 
-}
 .working {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 30px;
     gap: 20px;
     width: 100%
 }
 .workcard {
-    @include workcard-hover();
     display: flex;
     align-items: center;
     gap: 25px;
@@ -104,14 +92,18 @@
                     border: #F5EDFF solid 10px;
                     .workcard__main__ico {color: $primary;}                    
                 }
+        &:hover {
+            background-color: #F5EDFF;
+            border: #F5EDFF solid 10px;
+            .workcard__main__ico {color: $primary;} 
+        }
         }
 }
 
 /* Shop */
 
 .shops {
-    display: flex;
-    flex-direction: column;
+    @include flexcol;
     align-items: center;
     background-color: $main-background;
     gap: 25px;

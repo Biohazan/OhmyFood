@@ -255,14 +255,17 @@ h2 {
   font-weight: 800;
 }
 
+/* Header */
 .heading a {
   font-size: 20px;
 }
 
+/* Buttons */
 .buttons a {
   font-size: 15px;
 }
 
+/* Main-page */
 .localisation a i {
   font-size: 16px;
 }
@@ -284,6 +287,11 @@ h2 {
   margin: 0px;
 }
 
+.heart {
+  font-size: 25px;
+}
+
+/* Cards */
 .cards__new {
   font-size: 13px;
 }
@@ -300,6 +308,7 @@ h2 {
   font-size: 15px;
 }
 
+/* Footer */
 .foot__title {
   font-size: 20px;
 }
@@ -311,10 +320,6 @@ h2 {
 .foot__link i {
   font-size: 15px;
   width: 15px;
-}
-
-.heart {
-  font-size: 25px;
 }
 
 .buttons {
@@ -801,10 +806,6 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -823,15 +824,6 @@ h2 {
   gap: 25px;
   width: 100%;
   position: relative;
-}
-
-.workcard .workcard__main:hover {
-  background-color: #F5EDFF;
-  border: #F5EDFF solid 10px;
-}
-
-.workcard .workcard__main:hover .workcard__main__ico {
-  color: #9356DC;
 }
 
 .workcard__number {
@@ -879,6 +871,15 @@ h2 {
 }
 
 .workcard__main--purple .workcard__main__ico {
+  color: #9356DC;
+}
+
+.workcard__main:hover {
+  background-color: #F5EDFF;
+  border: #F5EDFF solid 10px;
+}
+
+.workcard__main:hover .workcard__main__ico {
   color: #9356DC;
 }
 
@@ -1007,21 +1008,11 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   gap: 15px;
 }
 
 @media screen and (max-width: 1090px) {
   .cards__grid {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .menu__grid {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

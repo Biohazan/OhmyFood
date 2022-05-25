@@ -1,8 +1,7 @@
 /* Footer */
 
 .foot {
-    display: flex;
-    flex-direction: column;
+    @include flexcol;
     align-items: flex-start;
     background-color: #353535;
     color: white;

@@ -1,8 +1,7 @@
 // Cards //
 
 .card {
-    display: flex;
-    flex-direction: column;
+    @include flexcol;
     width: 100%;
     overflow: hidden;
     background-color: white;

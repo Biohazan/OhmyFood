@@ -13,7 +13,7 @@
     transition: 0.2s ease-in-out;
         &:hover {
             background: linear-gradient(175deg, lighten($second, 2%), lighten($primary, 2%));
-            @include shadow-btn
+            @include shadow-btn-hover
         }
     }
 }
