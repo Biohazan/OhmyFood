@@ -8,12 +8,14 @@
     border-radius: 15px;
     @include shadow;
     animation: menu_anim $anim-dur ease-in-out forwards;
+    transition: 0.2s ease-in-out;
     @for $i from 1 through 10 {
         &--#{$i} {
             animation-delay: $anim-delay * $i;
             opacity: 0;
         }
     }
+    &:hover {@include shadow-hover;}
     &__img {
         background-position: bottom;
         background-size: cover;
@@ -99,3 +101,6 @@
 @keyframes icon_rotate {
     to {transform: rotate(1turn)};
 } 
+@keyframes scalecard {
+    to {transform: scale(1.2);}
+}

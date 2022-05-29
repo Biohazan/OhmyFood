@@ -490,6 +490,8 @@ h2 {
           box-shadow: 2px 2px 12px #9999999c;
   -webkit-animation: menu_anim 1000ms ease-in-out forwards;
           animation: menu_anim 1000ms ease-in-out forwards;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .card--1 {
@@ -550,6 +552,11 @@ h2 {
   -webkit-animation-delay: 1000ms;
           animation-delay: 1000ms;
   opacity: 0;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 4px 12px #00000084;
+          box-shadow: 0px 4px 12px #00000084;
 }
 
 .card__img {
@@ -679,6 +686,20 @@ h2 {
   to {
     -webkit-transform: rotate(1turn);
             transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes scalecard {
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes scalecard {
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -917,13 +938,13 @@ h2 {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1036px) {
+@media (min-width: 768px) and (max-width: 1036px) {
   .heart {
     top: 86%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .working {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1011,7 +1032,7 @@ h2 {
   gap: 15px;
 }
 
-@media screen and (max-width: 1090px) {
+@media (max-width: 1090px) {
   .cards__grid {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
